@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project Overview</title>
+  <title>Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <h1>My Project</h1>
-  <div class="nav-placeholder"></div>
-</header>
 
-<script src="nav.js"></script>
-  <h1>Project Overview</h1>
-  <ul>
-    <li><strong>Project A:</strong> HTML Basics</li>
-    <li><strong>Project B:</strong> CSS Demo</li>
-    <li><strong>Project C:</strong> GitHub Pages Example</li>
-  </ul>
+  <header class="site-header">
+    <h1>Project Overview</h1>
+    <div class="nav-placeholder"></div>
+  </header>
 
-  <p><a href="index.html">Back to home</a></p>
+  <main class="content">
+    <section id="project-list">
+      <p>Loading projects...</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 – My Project</p>
+  </footer>
 
   <button id="toggle-mode">🌙 Dark Mode</button>
   <script src="darkmode.js"></script>
+  <script src="nav.js"></script>
+  <script src="load-projects.js"></script>
 
 </body>
 </html>

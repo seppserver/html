@@ -172,3 +172,16 @@ body.dark-mode #menu-toggle .bar {
 #menu-toggle.open .bar:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
+.project-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .project-card {
+  background: #2b2b2b;
+  border-color: #444;
+}
