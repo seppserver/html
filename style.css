@@ -17,21 +17,41 @@ a {
 a:hover {
   text-decoration: underline;
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-  }
+/* Heller Modus (Standard) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-  h1 {
-    color: #66aaff;
-  }
+h1 {
+  color: #0066cc;
+}
 
-  a {
-    color: #66aaff;
-  }
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
 
-  a:hover {
-    color: #99ccff;
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dunkler Modus */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode h1 {
+  color: #66aaff;
+}
+
+body.dark-mode a {
+  color: #66aaff;
+}
+
+body.dark-mode a:hover {
+  color: #99ccff;
 }
