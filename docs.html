@@ -32,23 +32,25 @@
   <script src="darkmode.js"></script>
   <script src="nav.js"></script>
 
- <script>
-  fetch('docs.md')
-    .then(res => res.text())
-    .then(md => {
-      const html = marked.parse(md);
-      const container = document.getElementById('markdown-container');
-      container.innerHTML = html;
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('docs.md')
+      .then(res => res.text())
+      .then(md => {
+        const html = marked.parse(md);
+        const container = document.getElementById('markdown-container');
+        container.innerHTML = html;
 
-      // Highlight code blocks
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
+        // Highlight code blocks
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+      })
+      .catch(err => {
+        document.getElementById('markdown-container').innerHTML = '<p>Error loading documentation.</p>';
+        console.error('Markdown load error:', err);
       });
-    })
-    .catch(err => {
-      document.getElementById('markdown-container').innerHTML = '<p>Error loading documentation.</p>';
-      console.error('Markdown load error:', err);
-    });
+  });
 </script>
 
 </body>
