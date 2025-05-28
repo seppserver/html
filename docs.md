@@ -1,15 +1,25 @@
-# Documentation
+# Markdown Styling Demo
 
-This is an example documentation file.
+## Headings
 
-## Features
+### Level 3
 
-- Responsive navigation
-- Dark mode with persistent toggle
-- Dynamic content via JSON
+## Lists
 
-## Setup
+- One
+- Two
+- Three
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Done!
+## Code Example
+
+Inline: `const x = 42;`
+
+Block:
+
+```js
+// Highlighted JavaScript block
+const sayHello = (name) => {
+  console.log(`Hello, ${name}`);
+};
+<!-- Highlighted HTML block -->
+<div class="example">Hello World</div>
