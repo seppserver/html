@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navHTML = `
-    <button id="menu-toggle" aria-label="Toggle navigation">☰ Menu</button>
+    <button id="menu-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <nav class="main-nav" id="main-nav">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
@@ -9,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.querySelector('.nav-placeholder').innerHTML = navHTML;
 
-  // Toggle mobile menu
   const toggleButton = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
+
   toggleButton.addEventListener('click', () => {
     nav.classList.toggle('nav-visible');
+    toggleButton.classList.toggle('open');
   });
 
-  // Highlight current page
   const navLinks = nav.querySelectorAll('a');
   const currentPage = window.location.pathname.split('/').pop();
   navLinks.forEach(link => {

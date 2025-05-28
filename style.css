@@ -137,3 +137,38 @@ body.dark-mode #menu-toggle {
     opacity: 1;
   }
 }
+#menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 0 auto;
+  z-index: 1100;
+}
+
+#menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode #menu-toggle .bar {
+  background-color: #fff;
+}
+
+/* Animation zu "X" */
+#menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+#menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
