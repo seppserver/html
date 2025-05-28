@@ -1,0 +1,17 @@
+[
+  {
+    "title": "HTML Basics",
+    "description": "Introduction to HTML structure, elements, and syntax.",
+    "link": "html-basics.html"
+  },
+  {
+    "title": "CSS Demo",
+    "description": "Examples of styling using CSS selectors and properties.",
+    "link": "css-demo.html"
+  },
+  {
+    "title": "GitHub Pages Example",
+    "description": "A demo project published via GitHub Pages.",
+    "link": "https://seppserver.github.io/html/"
+  }
+]
