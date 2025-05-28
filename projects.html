@@ -13,5 +13,23 @@
     <li><strong>Projekt C:</strong>  Project III</li>
   </ul>
   <p><a href="index.html">Zurück zur Startseite</a></p>
+  <button id="toggle-mode">🌙 Dark Mode</button>
+
+<script>
+  const button = document.getElementById('toggle-mode');
+  const body = document.body;
+
+  // Beim Klick zwischen Modi umschalten
+  button.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    // Text des Buttons anpassen
+    if (body.classList.contains('dark-mode')) {
+      button.textContent = '☀️ Light Mode';
+    } else {
+      button.textContent = '🌙 Dark Mode';
+    }
+  });
+</script>
 </body>
 </html>
