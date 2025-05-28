@@ -2,26 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project Overview</title>
+  <title>Documentation</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
-<header class="site-header">
-  <h1>My Project</h1>
-  <div class="nav-placeholder"></div>
-<header class="site-header">
-  <h1>My Project</h1>
-  <div class="nav-placeholder"></div>
-</header>
-
-<script src="nav.js"></script>
+  <header class="site-header">
+    <h1>Documentation</h1>
+    <div class="nav-placeholder"></div>
+  </header>
 
   <main class="content">
-    <section>
-      <h2>Welcome</h2>
-      <p>This is the structured landing page of the project. You can provide a brief introduction or overview here.</p>
+    <section id="markdown-container">
+      <p>Loading documentation...</p>
     </section>
   </main>
 
@@ -31,6 +25,20 @@
 
   <button id="toggle-mode">🌙 Dark Mode</button>
   <script src="darkmode.js"></script>
+  <script src="nav.js"></script>
+
+  <script>
+    fetch('docs.md')
+      .then(res => res.text())
+      .then(md => {
+        const html = marked.parse(md);
+        document.getElementById('markdown-container').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('markdown-container').innerHTML = '<p>Error loading documentation.</p>';
+        console.error('Markdown load error:', err);
+      });
+  </script>
 
 </body>
 </html>
