@@ -17,6 +17,9 @@ Inline: `const x = 42;`
 Block:
 
 ```js
-function greet(name) {
-  return `Hello, ${name}!`;
-}
+// Highlighted JavaScript block
+const sayHello = (name) => {
+  console.log(`Hello, ${name}`);
+};
+<!-- Highlighted HTML block -->
+<div class="example">Hello World</div>
