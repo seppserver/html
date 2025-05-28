@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Documentation</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<!-- Highlight.js Theme -->
-<link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.min.css">
 
-<!-- Highlight.js Core -->
-<script src="https://unpkg.com/highlight.js@11.9.0/build/highlight.min.js"></script>
+  <!-- Styling -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Highlight.js CSS theme (GitHub style) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.min.css">
+
+  <!-- Highlight.js core (richtig geladen) -->
+  <script src="https://unpkg.com/highlight.js@11.9.0/build/highlight.min.js"></script>
+
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -32,26 +37,26 @@
   <script src="darkmode.js"></script>
   <script src="nav.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('docs.md')
-      .then(res => res.text())
-      .then(md => {
-        const html = marked.parse(md);
-        const container = document.getElementById('markdown-container');
-        container.innerHTML = html;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('docs.md')
+        .then(res => res.text())
+        .then(md => {
+          const html = marked.parse(md);
+          const container = document.getElementById('markdown-container');
+          container.innerHTML = html;
 
-        // Highlight code blocks
-        document.querySelectorAll('pre code').forEach((block) => {
-          hljs.highlightElement(block);
+          // Highlight all code blocks
+          document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+          });
+        })
+        .catch(err => {
+          document.getElementById('markdown-container').innerHTML = '<p>Error loading documentation.</p>';
+          console.error('Markdown load error:', err);
         });
-      })
-      .catch(err => {
-        document.getElementById('markdown-container').innerHTML = '<p>Error loading documentation.</p>';
-        console.error('Markdown load error:', err);
-      });
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
