@@ -274,3 +274,10 @@ body.dark-mode #markdown-container td {
   border-color: #444;
   background-color: #2a2a2a;
 }
+.hero-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
